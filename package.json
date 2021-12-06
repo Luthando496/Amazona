@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix front && npm run build --prefix front",
-    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon Back/server.js",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon Back/server.js",
-    "start": "SET nodemon Back/server.js"
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon Back/Server.js",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon Back/Server.js",
+    "start": "SET nodemon Back/Server.js"
   },
   "author": "",
   "license": "ISC",
