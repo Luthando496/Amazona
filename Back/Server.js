@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const dotenv = require('dotenv')
-dotenv.config({path:'./config.env'})
+dotenv.config({path:'../Back/config.env'})
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const users = require('./Routes/User')
@@ -51,9 +51,12 @@ app.use(errorMiddleware)
 
 
 
+
+const DB = process.env.DB
+console.log(process.env.DB)
 const connectDB = async()=>{
     try{
-        await mongoose.connect('mongodb+srv://lavisa:lavisa12345@cluster0.21q9n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+        await mongoose.connect(DB, {
             useNewUrlParser: true,
             useUnifiedTopology:true}
         );
