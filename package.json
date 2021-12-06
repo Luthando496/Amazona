@@ -1,0 +1,18 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix front && npm run build --prefix front",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon Back/server.js",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon Back/server.js",
+    "start": "SET nodemon Back/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
