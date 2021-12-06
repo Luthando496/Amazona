@@ -81,11 +81,10 @@ process.on('uncaughtException',err=>{
 
 })
 
-const port = 7000
 
 
 
-const server = app.listen(port || process.env.PORT,()=>{
+const server = app.listen(process.env.PORT,()=>{
     console.log(`Server is Running At 7000 In ${process.env.NODE_ENV}`)
 })
 
