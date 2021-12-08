@@ -1,7 +1,5 @@
 const express = require('express')
 const app = express()
-const dotenv = require('dotenv')
-dotenv.config({path:'../config.env'})
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const users = require('./Routes/User')
@@ -36,7 +34,7 @@ app.use('/v1/api/amazona/',products)
 app.use('/v1/api/amazona/orders',orders)
 
 
-if(process.env.NODE_ENV='PRODUCTION'){
+if(process.env.NODE_ENV ==='PRODUCTION'){
     app.use(express.static(path.join(__dirname,'../front/build')))
 
     app.get('*', (req,res)=>{
@@ -48,6 +46,8 @@ if(process.env.NODE_ENV='PRODUCTION'){
 
 // MIDDLEWARE TO HANDLE MIDDLEWARES
 app.use(errorMiddleware)
+
+if(process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({path:'../config.env'})
 
 
 
