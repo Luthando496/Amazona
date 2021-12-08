@@ -7,7 +7,7 @@
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon Server.js",
     "prod": "SET NODE_ENV=PRODUCTION& nodemon Server.js",
     "start": "nodemon server.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false && npm install --prefix ../front && npm run build --prefix ../front"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ../front && npm run build --prefix ../front"
   },
   "author": "",
   "license": "ISC",

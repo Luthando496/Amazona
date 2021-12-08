@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const dotenv = require('dotenv')
-dotenv.config({path:'../Back/config.env'})
+dotenv.config({path:'../config.env'})
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const users = require('./Routes/User')
@@ -84,8 +84,8 @@ process.on('uncaughtException',err=>{
 
 
 
-const server = app.listen(process.env.PORT,()=>{
-    console.log(`Server is Running At 7000 In ${process.env.NODE_ENV}`)
+const server = app.listen(7000,()=>{
+    console.log(`Server is Running At ${process.env.PORT} In ${process.env.NODE_ENV}`)
 })
 
 
