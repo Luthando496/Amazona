@@ -17,6 +17,8 @@ const { resolve } = require('path')
 
 
 
+
+
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({ extended:true}))
@@ -49,16 +51,15 @@ if(process.env.NODE_ENV ==='PRODUCTION'){
 // MIDDLEWARE TO HANDLE MIDDLEWARES
 app.use(errorMiddleware)
 
-if(process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({path:'../config.env'})
+// if(process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({path:'../config.env'})
 
 
 
 
-const DB = process.env.DB
 console.log(process.env.DB)
 const connectDB = async()=>{
     try{
-        await mongoose.connect(DB, {
+        await mongoose.connect("mongodb+srv://lavisa:lavisa12345@cluster0.21q9n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
             useNewUrlParser: true,
             useUnifiedTopology:true}
         );
