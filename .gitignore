@@ -11,7 +11,7 @@
 /front/build
 
 # misc
-config.env
+/Back/config.env
 /front/.env.local
 /front/.env.development.local
 /front/.env.test.local

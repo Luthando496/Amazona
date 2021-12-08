@@ -1,5 +1,5 @@
-const dotenv = require('dotenv');
-dotenv.config({path:'../config.env'})
+const dotenv = require('dotenv')
+dotenv.config({path:"./config.env"})
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -38,7 +38,7 @@ app.use('/v1/api/amazona/',products)
 app.use('/v1/api/amazona/orders',orders)
 
 
-if(process.env.NODE_ENV ==='PRODUCTION'){
+if(process.env.NODE_ENV === 'PRODUCTION'){
     app.use(express.static(path.join(__dirname,'../front/build')))
 
     app.get('*', (req,res)=>{
@@ -56,7 +56,7 @@ app.use(errorMiddleware)
 
 
 
-console.log(process.env.DB)
+console.log(process.env)
 const connectDB = async()=>{
     try{
         await mongoose.connect("mongodb+srv://lavisa:lavisa12345@cluster0.21q9n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
