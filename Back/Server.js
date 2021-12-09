@@ -1,6 +1,6 @@
-const dotenv = require('dotenv')
-dotenv.config({path:"./config/config.env"})
 const express = require('express')
+const dotenv = require('dotenv')
+dotenv.config({ path:'/Back/Config/config.env'})
 const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
@@ -16,7 +16,7 @@ const { resolve } = require('path')
 
 
 
-
+// if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: '/Back/Config/config.env' })
 
 
 app.use(express.json())
@@ -56,10 +56,10 @@ app.use(errorMiddleware)
 
 
 
-console.log(process.env)
+// console.log(process.env)
 const connectDB = async()=>{
     try{
-        await mongoose.connect("mongodb+srv://lavisa:lavisa12345@cluster0.21q9n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+        await mongoose.connect(process.env.DB, {
             useNewUrlParser: true,
             useUnifiedTopology:true}
         );
